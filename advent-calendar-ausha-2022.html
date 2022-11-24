@@ -1,0 +1,388 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Language" content="fr">
+<title>Advent Calendar Ausha 2023</title>
+</head>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unkempt:wght@400;700&display=swap" rel="stylesheet">
+<style>
+
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700");
+ *, *::after, *::before {
+	 padding: 0;
+	 margin: 0;
+	 box-sizing: border-box;
+}
+ body {
+	font-family: 'Unkempt', cursive;
+}
+ .content {
+	 text-align: center;
+	 padding: 4em 0;
+}
+ .cards {
+	 display: flex;
+	 justify-content: space-evenly;
+   margin-bottom: 30px;
+}
+ .card {
+	 width: 15%;
+	 position: relative;
+	 height: 25em;
+	 perspective: 150em;
+}
+ .card__side {
+	 position: absolute;
+	 top: 0;
+	 left: 0;
+	 width: 100%;
+	 height: 25em;
+	 backface-visibility: hidden;
+	 transition: all 0.6s ease;
+   border-radius: 30px;
+}
+ .card__side--front {
+	 background-color: #c33d5f;
+   color: #fff;
+       overflow: hidden;
+}
+ .card__side--back {
+	 color: #fff;
+	 transform: rotateY(180deg);
+  background-position: center;
+}
+ .card__side--back-1 {
+	 background-image: linear-gradient(to right bottom, #7ed56f, #28b485);
+}
+ .card__side--back-2 {
+	 background-image: linear-gradient(to right bottom, #2998ff, #5643fa);
+}
+ .card__side--back-3 {
+	 background-image: linear-gradient(to right bottom, #ffb900, #ff7730);
+}
+ .card:hover .card__side--front {
+	 transform: rotateY(-180deg);
+}
+.card__side--front--holiday {
+  background-color: #242424;
+}
+.card:hover .card__side--front--holiday {
+  transform: none;
+}
+ .card:hover .card__side--back {
+	 transform: rotate(0);
+}
+ .card__description {
+	 text-transform: uppercase;
+	 font-size: 5em;
+	 padding: 0.5em 0;
+}
+ .card__description svg {
+	 width: 1.5em;
+	 height: 1.5em;
+	 fill: #fff;
+}
+
+.card_img {
+  width: 100%;
+  height: 200px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.card_img_1{background-image: url("img/Christmas_01.png")}
+.card_img_2{background-image: url("img/Christmas_29.png")}
+.card_img_3{background-image: url("img/Christmas_27.png")}
+.card_img_4{background-image: url("img/Christmas_25.png")}
+.card_img_5{background-image: url("img/Christmas_05.png")}
+.card_img_6{background-image: url("img/Christmas_22.png")}
+.card_img_7{background-image: url("img/Christmas_19.png")}
+.card_img_8{background-image: url("img/Christmas_08.png")}
+.card_img_9{background-image: url("img/Christmas_15.png")}
+.card_img_10{background-image: url("img/Christmas_10.png")}
+.card_img_11{background-image: url("img/Christmas_11.png")}
+.card_img_12{background-image: url("img/Christmas_12.png")}
+.card_img_13{background-image: url("img/Christmas_13.png")}
+.card_img_14{background-image: url("img/Christmas_14.png")}
+.card_img_15{background-image: url("img/Christmas_20.png")}
+.card_img_16{background-image: url("img/Christmas_16.png")}
+.card_img_17{background-image: url("img/Christmas_17.png")}
+.card_img_18{background-image: url("img/Christmas_18.png")}
+.card_img_19{background-image: url("img/Christmas_07.png")}
+.card_img_20{background-image: url("img/Christmas_04.png")}
+.card_img_21{background-image: url("img/Christmas_21.png")}
+.card_img_22{background-image: url("img/Christmas_06.png")}
+.card_img_23{background-image: url("img/Christmas_24.png")}
+.card_img_24{background-image: url("img/Christmas_23.png")}
+
+.card_bg_1{background-color: #c33d5f;}
+.card_bg_2{background-color: #79e4e8;}
+.card_bg_3{background-color: #00ab77;}
+.card_bg_4{background-color: #69dadd;}
+.card_bg_5{background-color: #ffc45f;}
+.card_bg_6{background-color: #00936c;}
+.card_bg_7{background-color: #33c6c6;}
+.card_bg_8{background-color: #004759;}
+.card_bg_9{background-color: #ffe488;}
+.card_bg_10{background-color: #c33d5f;}
+.card_bg_11{background-color: #6d3347;}
+.card_bg_12{background-color: #00ab77;}
+.card_bg_13{background-color: #6d3347;}
+.card_bg_14{background-color: #ffe488;}
+.card_bg_15{background-color: #c33d5f;}
+.card_bg_16{background-color: #79e4e8;}
+.card_bg_17{background-color: #00ab77;}
+.card_bg_18{background-color: #004759;}
+.card_bg_19{background-color: #00537c;}
+.card_bg_20{background-color: #69dadd;}
+.card_bg_21{background-color: #ffc45f;}
+.card_bg_22{background-color: #00936c;}
+.card_bg_23{background-color: #6d3347;}
+.card_bg_24{background-color: #79e4e8;}
+
+
+.card_img_flo{background-image: url("team/flo.jpg"); background-size: cover;}
+.card_img_max{background-image: url("team/max.jpg"); background-size: cover;}
+.card_img_jen{background-image: url("team/jen.jpg"); background-size: cover;}
+.card_img_pierre{background-image: url("team/pierre.jpg"); background-size: cover;}
+.card_img_corentin{background-image: url("team/corentin.jpg"); background-size: cover;}
+.card_img_maud{background-image: url("team/maud.png"); background-size: cover;}
+.card_img_odile{background-image: url("team/odile.png"); background-size: cover;}
+.card_img_jeremy{background-image: url("team/jeremy.jpg"); background-size: cover;}
+.card_img_nicolas{background-image: url("team/nicolas.jpg"); background-size: cover;}
+
+.card_img_niro{background-image: url("team/niro.png"); background-size: cover;}
+.card_img_lauma{background-image: url("team/lauma.png"); background-size: cover;}
+.card_img_satila{background-image: url("team/satila.png"); background-size: cover;}
+.card_img_myau{background-image: url("team/myau.png"); background-size: cover;}
+.card_img_maemad{background-image: url("team/maemad.png"); background-size: cover;}
+
+h1{
+  padding: 0.2em 0 1em 0;
+  font-size: 5em;
+  color: #bd1622;
+  font-family: 'Unkempt', sans-serif;
+}
+
+</style>
+<body>
+
+  <section class="content">
+    <img src="bille.png" width="70" />
+    <h1>Calendrier de l'Avent</h1>
+    <div class="cards">
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_1">
+          <div class="card__description">1</div>
+          <div class="card_img card_img_1"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 ">
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_2">
+          <div class="card__description">2</div>
+          <div class="card_img card_img_2"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card__side--front--holiday">
+          <div class="card__description">3</div>
+          <div class="card_img card_img_3"></div>
+        </div>
+
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card__side--front--holiday">
+          <div class="card__description">4</div>
+          <div class="card_img card_img_4"></div>
+        </div>
+
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_5">
+          <div class="card__description">5</div>
+          <div class="card_img card_img_5"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card_bg_6">
+          <div class="card__description">6</div>
+          <div class="card_img card_img_6"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-3 card_img_max">
+          <div class="card__description"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_7">
+          <div class="card__description">7</div>
+          <div class="card_img card_img_7"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 card_img_niro">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_8">
+          <div class="card__description">8</div>
+          <div class="card_img card_img_8"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2 card_img_odile">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card_bg_9">
+          <div class="card__description">9</div>
+          <div class="card_img card_img_9"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-3 card_img_maud">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card__side--front--holiday">
+          <div class="card__description">10</div>
+          <div class="card_img card_img_10"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card__side--front--holiday">
+          <div class="card__description">11</div>
+          <div class="card_img card_img_11"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card_bg_12">
+          <div class="card__description">12</div>
+          <div class="card_img card_img_12"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-3 card_img_jen">
+          <div class="card__description"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_13">
+          <div class="card__description">13</div>
+          <div class="card_img card_img_13"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 card_img_jeremy">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_14">
+          <div class="card__description">14</div>
+          <div class="card_img card_img_14"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2 card_img_lauma">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card_bg_15">
+          <div class="card__description">15</div>
+          <div class="card_img card_img_15"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-3 card_img_satila">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_16">
+          <div class="card__description">16</div>
+          <div class="card_img card_img_16"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 card_img_pierre">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card__side--front--holiday">
+          <div class="card__description">17</div>
+          <div class="card_img card_img_17"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card__side--front--holiday">
+          <div class="card__description">18</div>
+          <div class="card_img card_img_18"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cards">
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_19">
+          <div class="card__description">19</div>
+          <div class="card_img card_img_19"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 card_img_flo">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_20">
+          <div class="card__description">20</div>
+          <div class="card_img card_img_20"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2 card_img_maemad">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card_bg_21">
+          <div class="card__description">21</div>
+          <div class="card_img card_img_21"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-3">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-1 card_bg_22">
+          <div class="card__description">22</div>
+          <div class="card_img card_img_22"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-1 card_img_nicolas">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-2 card_bg_23">
+          <div class="card__description">23</div>
+          <div class="card_img card_img_23"></div>
+        </div>
+        <div class="card__side card__side--back card__side--back-2 card_img_myau">
+          <div class="card__description"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card__side card__side--front card__side--front-3 card__side--front--holiday card_bg_24">
+          <div class="card__description">24</div>
+          <div class="card_img card_img_24"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
